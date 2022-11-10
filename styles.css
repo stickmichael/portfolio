@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap');
+
+:root {
+  --small-screen-width:90%;
+  --large-screen-width:70%;
+  --text-size:1.25rem;
+  --penguin-face: white;
+  --penguin-extremities: orange;
+  --penguin-skin: grey;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body, header, nav, ul, li, main, article, section, footer, a {
+  margin:0;
+  padding:0;
+  list-style-type: none;
+  color:white;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color:black;
+  font-family: Poppins, sans-serif;
+}
+
+/*Navbar Settings*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+  background-color:black;
+}
+
+#navbar, #contact, footer {
+  width:var(--small-screen-width);
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#navbar li {
+  margin:1em;
+}
+
+#welcome-section, #projects {
+  width: var(--small-screen-width);
+  min-height:100vh;
+  margin:0 auto;
+  padding:4rem 0;
+}
+
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#welcome-section > * {
+  margin: 1.5em 0em;
+}
+
+#welcome-section h1 {
+  font-size: calc(1.75rem + 2vw);
+}
+
+#welcome-section .about-me-lists {
+  margin-left:1.25em;
+  font-size: var(--text-size);
+}
+
+.about-me-lists li:before {
+  content:"\003E \0020";
+}
+
+.social-media {
+  display: flex;
+}
+
+.social-media a {
+  font-size:2em;
+  margin-right:1em;
+}
+
+.social-media a:last-child {
+  margin:0;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#projects section {
+  display:flex;
+  justify-content:center;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.project-tile {
+  text-align: center;
+  flex-basis:180px;
+  height:180px;
+  background-color:#32333b;
+  border-radius:0.5rem;
+  margin:1em;
+  transition: all 0.3s ease-in-out;
+}
+
+.project-tile:hover {
+  transform:scale(1.03);
+  background-color:white;
+  color:black;
+  box-shadow:0 10px 30px -5px rgba(255,255,255,0.2);
+}
+
+.project-tile a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.main-info {
+  font-size:1.125em;
+}
+
+.extra-info {
+  display: none;
+}
+
+.project-tile:hover a {
+  color:black;
+}
+
+#projects p {
+  text-align: center;
+  font-size: var(--text-size);
+}
+
+#projects p a {
+  margin:0 0.5em;
+}
+
+#contact {
+  margin:0 auto;
+  padding:2rem 0;
+}
+
+#contact .social-media {
+  justify-content: center;
+  align-items: center;
+  padding:2rem 0;
+}
+
+footer {
+  text-align: center;
+  margin:0 auto;
+  padding-bottom:1em;
+}
+
+footer .heart {
+  color:red;
+}
+
+.heart + a:hover {
+  border-bottom: 3.5px solid white;
+}
+
+header a:hover, footer a {
+  border-bottom: 2px solid white;
+}
+
+/*Penguin animation settings*/
+
+.penguin-one {
+  width: 200px;
+  height: 200px;
+  margin-top: 50px; 
+  margin-left: 30px;
+  z-index: 4;
+  position: absolute;
+  transition: transform 1s ease-in-out 0ms;
+}
+
+.penguin-one * {
+  position: absolute;
+}
+
+/*Add a transform on click*/
+.penguin-one:active {
+  transform:"";
+  cursor: not-allowed;
+}
+
+.penguin-head {
+  width: 50%;
+  height: 45%;
+  background: linear-gradient(
+    45deg,
+    var(--penguin-skin),
+    rgb(239, 240, 228)
+  );
+  border-radius: 70% 70% 65% 65%;
+  top: 10%;
+  left: 25%;
+  z-index: 1;
+}
+
+.face {
+  width: 60%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  border-radius: 70% 70% 60% 60%;
+  top: 15%;
+}
+
+.face.left {
+  left: 5%;
+}
+
+.face.right {
+  right: 5%;
+}
+
+.chin {
+  width: 90%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  top: 25%;
+  left: 5%;
+  border-radius: 70% 70% 100% 100%;
+}
+
+.eye {
+  width: 15%;
+  height: 17%;
+  background-color: black;
+  top: 45%;
+  border-radius: 50%;
+}
+
+.eye.left {
+  left: 25%;
+}
+
+.eye.right {
+  right: 25%;
+}
+
+.eye-lid {
+  width: 150%;
+  height: 100%;
+  background-color: var(--penguin-face);
+  top: 25%;
+  left: -23%;
+  border-radius: 50%;
+}
+
+.blush {
+  width: 15%;
+  height: 10%;
+  background-color: pink;
+  top: 65%;
+  border-radius: 50%;
+}
+
+.blush.left {
+  left: 15%;
+}
+
+.blush.right {
+  right: 15%;
+}
+
+.beak {
+  height: 10%;
+  background-color: var(--penguin-extremities);
+  border-radius: 50%;
+}
+
+.beak.top {
+  width: 20%;
+  top: 60%;
+  left: 40%;
+}
+
+.beak.bottom {
+  width: 16%;
+  top: 65%;
+  left: 42%;
+}
+
+.penguin-body {
+  width: 53%;
+  height: 45%;
+  background: linear-gradient(
+    45deg,
+    rgb(134, 133, 133) 0%,
+    rgb(234, 231, 231) 25%,
+    white 67%
+  );
+  border-radius: 80% 80% 100% 100%;
+  top: 40%;
+  left: 23.5%;
+}
+
+.penguin-body::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 70%;
+  background-color: var(--penguin-skin);
+  top: 10%;
+  left: 25%;
+  border-radius: 0% 0% 100% 100%;
+  opacity: 70%;
+}
+
+.arm {
+  width: 30%;
+  height: 60%;
+  background: linear-gradient(
+    90deg,
+    var(--penguin-skin),
+    rgb(209, 210, 199)
+  );
+  border-radius: 30% 30% 30% 120%;
+  z-index: -1;
+}
+
+.arm.left {
+  top: 35%;
+  left: 5%;
+  transform-origin: top left; 
+  transform: rotate(130deg) scaleX(-1);
+  animation: 3s linear infinite wave;
+}
+
+.arm.right {
+  top: 0%;
+  right: -5%;
+  transform: rotate(-45deg);
+}
+
+@keyframes wave {
+  10% {
+    transform: rotate(110deg) scaleX(-1);
+  }
+  20% {
+    transform: rotate(130deg) scaleX(-1);
+  }
+  30% {
+    transform: rotate(110deg) scaleX(-1);
+  }
+  40% {
+    transform: rotate(130deg) scaleX(-1);
+  }
+}
+
+.foot {
+  width:  15%;
+  height: 30%;
+  background-color: var(--penguin-extremities);
+  top: 85%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.foot.left {
+  left: 25%;
+  transform: rotate(80deg);
+}
+
+.foot.right {
+  right: 25%;
+  transform: rotate(-80deg);
+}
+
+/*End of Penguin Settings*/
+
+@media screen and (min-width:769px) {
+
+  #welcome-section h1 {
+    font-size: calc(1.5rem + 2vw);
+  }
+
+  #navbar, #welcome-section, #projects, #contact, footer {
+    width:var(--large-screen-width);
+  }
+
+  .project-tile {
+    flex-basis: 250px;
+    height: 250px;
+  }
+
+  .project-tile:hover .extra-info {
+    display: inline;
+    font-style: italic;
+  }
+}
