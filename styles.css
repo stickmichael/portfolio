@@ -207,6 +207,7 @@ header a:hover, footer a {
 }
 
 /*Add a transform on click*/
+/* Make the penguin the button to click to go from light, gray, and dark mode.  */
 .penguin-one:active {
   transform:"";
   cursor: not-allowed;
